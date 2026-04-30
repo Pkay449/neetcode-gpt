@@ -5,9 +5,9 @@ class Solution:
         # Update rule:        x = x - learning_rate * f'(x)
         # Round final answer to 5 decimal places
         x = init
-        for i in range(iterations):
-            x = x - learning_rate * self._grad_f(x)
+        for _ in range(iterations):
+            x = x - learning_rate * self.f_grad(x)
         return round(x, 5)
 
-    def _grad_f(self, x):
+    def f_grad(self, x:int):
         return 2*x
